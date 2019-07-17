@@ -36,12 +36,14 @@ class Lightcontrol(object):
         msglight = ""
         if intent_message.slot:
             msglight = "eteindre la lumiere"
+            print(msglight)
         hermes.publish_end_session(intent_message.session_id, msglight)
 
     def intent_2_callback(self, hermes, intent_message):
         msglight = ""
         if intent_message.slot:
-            msglight = "allumer la lumiere"      
+            msglight = "allumer la lumiere"
+            print(msglight)
         hermes.publish_end_session(intent_message.session_id, msglight)
 
     # More callback function goes here...
