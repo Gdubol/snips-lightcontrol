@@ -39,8 +39,9 @@ class Lightcontrol(object):
             print(msglight)
         hermes.publish_end_session(intent_message.session_id, msglight)
 
-    def intent_2_callback(self, hermes, intent_message):
+    def lighton(self, hermes, intent_message):
         msglight = ""
+        print("ok")
         if intent_message.slot:
             msglight = "allumer la lumiere"
             print(msglight)
@@ -52,9 +53,9 @@ class Lightcontrol(object):
     def master_intent_callback(self,hermes, intent_message):
         coming_intent = intent_message.intent.intent_name
         if coming_intent == 'Gdubol:lightoff':
-            self.intent_1_callback(hermes, intent_message)
+           lightoff(hermes, intent_message)
         if coming_intent == 'Gdubol:lighton':
-            self.intent_2_callback(hermes, intent_message)
+            lighton(hermes, intent_message)
 
         # more callback and if condition goes here...
 
